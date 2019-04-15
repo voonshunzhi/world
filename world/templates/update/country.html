@@ -1,0 +1,154 @@
+{% extends "base.html" %} {% block content %}
+<form action="{{ url_for('updateCountry',id=country.country_code)}}" method="POST">
+<div class="card">
+    <h5 class="card-header">
+        Country --- {{ country.country_name }}
+    </h5>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-3">
+                <h6 class="card-title">Country code:</h6>
+            </div>
+            <div class="col-sm-6">
+                <p class="card-text">
+                    {{ country.country_code }}
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <h6 class="card-title">Continent:</h6>
+            </div>
+            <div class="col-sm-6">
+                <p class="card-text">
+                    <input name="continent" value="{{ country.continent }}"/>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <h6 class="card-title">Region:</h6>
+            </div>
+            <div class="col-sm-6">
+                <p class="card-text">
+                    <input name="region" value="{{ country.region }}" />
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <h6 class="card-title">Area(km^2):</h6>
+            </div>
+            <div class="col-sm-6">
+                <p class="card-text">
+                    <input name="area" value="{{ country.area }}" />
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <h6 class="card-title">Year of Independence:</h6>
+            </div>
+            <div class="col-sm-6">
+                <p class="card-text">
+                    <input name="year_of_independence" value="{{ country.year_of_independence }}" />
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <h6 class="card-title">Population:</h6>
+            </div>
+            <div class="col-sm-6">
+                <p class="card-text">
+                    <input name="population" value="{{ country.population }}" />
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <h6 class="card-title">Life Expectancy:</h6>
+            </div>
+            <div class="col-sm-6">
+                <p class="card-text">
+                    <input name="life_expectancy" value="{{ country.life_expectancy }}" />
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <h6 class="card-title">GNP:</h6>
+            </div>
+            <div class="col-sm-6">
+                <p class="card-text">
+                    <input name="gnp" value="{{ country.gnp }}" />
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <h6 class="card-title">GNPID:</h6>
+            </div>
+            <div class="col-sm-6">
+                <p class="card-text">
+                    <input name="gnpid" value="{{ country.gnpid }}" />
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <h6 class="card-title">Alternative name:</h6>
+            </div>
+            <div class="col-sm-6">
+                <p class="card-text">
+                    <input name="alternative_name" value="{{ country.alternative_name }}" />
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <h6 class="card-title">Ruling System:</h6>
+            </div>
+            <div class="col-sm-6">
+                <p class="card-text">
+                    <input name="ruling_system" value="{{ country.ruling_system }}" />
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <h6 class="card-title">Founder:</h6>
+            </div>
+            <div class="col-sm-6">
+                <p class="card-text">
+                    <input name="founder" value="{{ country.founder }}" />
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <h6 class="card-title">ISO Code:</h6>
+            </div>
+            <div class="col-sm-6">
+                <p class="card-text">
+                <input name="iso_code" value="{{ country.iso_code }}" />
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 offset-9">
+                <input type="submit" value="Update" class="btn btn-info" />
+                <button class="btn btn-info" onclick="goBack()">Go Back</button>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+{% endblock %}
+</div>

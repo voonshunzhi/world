@@ -1,0 +1,35 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Search for the world!</h1>
+    <p class="lead">
+      This is a world search engine that enables you to search for cities,
+      languages, and countries!!!
+    </p>
+    <div class="container">
+          <form action="{{ url_for('search') }}" method="GET">
+            <div class="row pt-5">
+              <div class="col-sm-8">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="formGroupExampleInput"
+                    placeholder="Search Countries ... Languages ... ,Cities ..."
+                    name="search"
+                  />
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <button type="submit" class="btn btn-danger">Search</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

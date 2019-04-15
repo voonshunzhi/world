@@ -1,0 +1,52 @@
+{% extends "base.html" %} {% block content %}
+<div class="card">
+    <h5 class="card-header">
+        City --- {{ city.city_name }}
+    </h5>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-3">
+                <h6 class="card-title">Country:</h6>
+            </div>
+            <div class="col-sm-6">
+                <p class="card-text">
+                    <a href="{{ url_for('country',id=city.country_code)}}">{{ city.country.country_name }}</a>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <h6 class="card-title">Province:</h6>
+            </div>
+            <div class="col-sm-6">
+                <p class="card-text">
+                    {{ city.province }}
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <h6 class="card-title">Population:</h6>
+            </div>
+            <div class="col-sm-6">
+                <p class="card-text">
+                    {{ city.population }}
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 offset-9">
+                <a style="color:white" class="btn btn-info" href="{{ url_for('updateCity',id=city.id)}}">Update</a>
+                <button class="btn btn-info" onclick="goBack()">Go Back</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+{% endblock %}
+</div>

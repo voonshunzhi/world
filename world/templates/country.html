@@ -1,0 +1,154 @@
+{% extends "base.html" %} {% block content %}
+<div class="card">
+  <h5 class="card-header">
+    Country --- {{ country.country_name }}
+  </h5>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-sm-3">
+        <h6 class="card-title">Country code:</h6>
+      </div>
+      <div class="col-sm-6">
+        <p class="card-text">
+          {{ country.country_code }}
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <h6 class="card-title">Continent:</h6>
+      </div>
+      <div class="col-sm-6">
+        <p class="card-text">
+          {{ country.continent }}
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <h6 class="card-title">Region:</h6>
+      </div>
+      <div class="col-sm-6">
+        <p class="card-text">
+          {{ country.region }}
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <h6 class="card-title">Area(km^2):</h6>
+      </div>
+      <div class="col-sm-6">
+        <p class="card-text">
+          {{ country.area }}
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <h6 class="card-title">Year of Independence:</h6>
+      </div>
+      <div class="col-sm-6">
+        <p class="card-text">
+          {{ country.year_of_independence }}
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <h6 class="card-title">Population:</h6>
+      </div>
+      <div class="col-sm-6">
+        <p class="card-text">
+          {{ country.population }}
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <h6 class="card-title">Life Expectancy:</h6>
+      </div>
+      <div class="col-sm-6">
+        <p class="card-text">
+          {{ country.life_expectancy }}
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <h6 class="card-title">GNP:</h6>
+      </div>
+      <div class="col-sm-6">
+        <p class="card-text">
+          {{ country.gnp }}
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <h6 class="card-title">GNPID:</h6>
+      </div>
+      <div class="col-sm-6">
+        <p class="card-text">
+          {{ country.gnpid }}
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <h6 class="card-title">Alternative name:</h6>
+      </div>
+      <div class="col-sm-6">
+        <p class="card-text">
+          {{ country.alternative_name }}
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <h6 class="card-title">Ruling System:</h6>
+      </div>
+      <div class="col-sm-6">
+        <p class="card-text">
+          {{ country.ruling_system }}
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <h6 class="card-title">Founder:</h6>
+      </div>
+      <div class="col-sm-6">
+        <p class="card-text">
+          {{ country.founder }}
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <h6 class="card-title">ISO Code:</h6>
+      </div>
+      <div class="col-sm-6">
+        <p class="card-text">
+          {{ country.iso_code }}
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3 offset-9" style="display:flex">
+        <a style="color:white" class="btn btn-info" href="{{ url_for('updateCountry',id=country.country_code)}}">Update</a>
+        <form action="{{ url_for('deleteCountry',id=country.country_code)}}" method="POST">
+          <button style="color:white" class="btn btn-info ml-2">Delete this country</button>
+        </form>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+  {% endblock %}
+</div>
